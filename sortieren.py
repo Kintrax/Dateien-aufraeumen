@@ -11,7 +11,7 @@ def sortieren(unordentlich):
             dst_dir = "C:/Users/troho/Desktop/PDF/"
         elif i.endswith((".stl", ".3mf")):
             dst_dir = "C:/Users/troho/Desktop/3D_Dateien/"
-        elif i.endswith((".lnk", ".exe")):
+        elif i.endswith((".lnk", ".exe", ".url")):
             dst_dir = "C:/Users/troho/Desktop/EXE/"
             exe = True
         else:
