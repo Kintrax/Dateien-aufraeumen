@@ -1,3 +1,3 @@
 @echo off
-python C:\Users\troho\Documents\GitHub\Dateien-aufraeumen\sortieren.py
+python C:\Users\deinUsername\Documents\GitHub\Dateien-aufraeumen\sortieren.py
 exit
