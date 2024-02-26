@@ -6,13 +6,13 @@ def sortieren(unordentlich):
     # Dateiendungen erkennen und Zielverzeichnis zuweisen
     for i in os.listdir(unordentlich):
         if i.endswith((".png", ".jpg")):
-            dst_dir = "C:/Users/troho/Desktop/IMG/"
+            dst_dir = f"{desktop}IMG/"
         elif i.endswith(".pdf"):
-            dst_dir = "C:/Users/troho/Desktop/PDF/"
+            dst_dir = f"{desktop}PDF/"
         elif i.endswith((".stl", ".3mf")):
-            dst_dir = "C:/Users/troho/Desktop/3D_Dateien/"
+            dst_dir = f"{desktop}3D_Dateien/"
         elif i.endswith((".lnk", ".exe", ".url")):
-            dst_dir = "C:/Users/troho/Desktop/EXE/"
+            dst_dir = f"{desktop}EXE/"
             exe = True
         else:
             continue
@@ -37,11 +37,15 @@ def sortieren(unordentlich):
         else:
             shutil.move(unordentlich + i, dst_dir)
 
-desktop = "C:/Users/troho/Desktop/"
+# Hier muss der korrekte Pfad zu deinem Desktop und Download Verzeichnis zugewiesen werden
+desktop = "C:/Users/deinUsername/Desktop/"
+download = "C:/Users/deinUsername/Downloads/"
+
+# Der Public Ordner muss nicht angepasst werden
 desktop_public = "C:/Users/Public/Desktop/"
-download = "C:/Users/troho/Downloads/"
 
 
-sortieren(desktop)
-sortieren(desktop_public)
-sortieren(download)
+verzeichnis_liste = [desktop, download, desktop_public]
+
+for verzeichnis in verzeichnis_liste:
+    sortieren(verzeichnis)
